@@ -28,7 +28,6 @@ module.exports.didMonthChange = ( entries ) => {
 
 module.exports.didMonthDataUpdate = async () => {
     const months = await Month.find({}).sort({date: -1}).limit(1);
-    return false
     if (months.length) {
         if (instadate.isSameMonth(months[0].date, new Date())){
             return true
